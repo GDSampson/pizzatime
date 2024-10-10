@@ -1,5 +1,7 @@
 "use client";
 
+
+
 import {useEffect, useState} from "react";
 
 import { getJSONData } from '@/tools/Toolkit';
@@ -38,5 +40,11 @@ export default function OrdersReport({setAppState, appState}:{setAppState:Functi
             !!! render out orders content here !!!
             </>
         );
-    }
+    }  else if (appState == 2) {
+        return (
+            <>
+            THE DATA IS LOADING! PLEASE WAIT!
+            </>
+        );
+    } 
 }
