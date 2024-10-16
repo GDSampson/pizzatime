@@ -14,7 +14,10 @@ const config: Config = {
         greyAccent:"#EDEDED",
         greyContent:"#939393",
         buttonDisabled:"#fccbc2",
-      }
+      },
+      fontSize: {
+        'ordrFontSize': '1.35rem'
+      },
     },
   },
   plugins: [],

@@ -1,5 +1,6 @@
 "use client";
 
+import OrderCom  from "@/components/OrderCom";
 
 
 import {useEffect, useState} from "react";
@@ -31,14 +32,27 @@ export default function OrdersReport({setAppState, appState}:{setAppState:Functi
 
     // -------------------------- state variables
     const [orders, setOrders] = useState<Order[]>([]);
-  
+    
     if (appState == 1) {
         return (<>No orders retrieved...</>);
     } else if (appState == 3) {
         return (
-            <>
-            !!! render out orders content here !!!
-            </>
+                <>
+                {orders.map((data:Order, i:number) =>  
+                    <OrderCom key={i} 
+                        id={data.id}
+                        name={data.name}
+                        address={data.address}
+                        city={data.city}
+                        size={data.size}
+                        delivered={data.delivered}
+                        toppings={data.toppings}
+                        notes={data.notes}
+                        />
+                        
+                )}
+                </>
+                
         );
     }  else if (appState == 2) {
         return (
